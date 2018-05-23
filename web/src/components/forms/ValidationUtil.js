@@ -1,0 +1,1 @@
+export const required = (value,allValues,props) => (value == null ||  0 === value.length ? 'Required' : undefined)

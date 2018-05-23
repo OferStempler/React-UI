@@ -1,0 +1,19 @@
+.container
+    input:-webkit-autofill { -webkit-box-shadow: 0 0 0 1000px white inset; }
+
+.container{
+    width: 100%;
+    height: 100%;
+}
+html {
+    height: 100%;
+}
+/* Hide HTML5 Up and Down arrows. */
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}

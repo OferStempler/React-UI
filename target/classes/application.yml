@@ -1,0 +1,37 @@
+
+server:
+  port: 8080
+  use-forward-headers: true
+multipart:
+    maxFileSize: 10Mb
+    maxRequestSize: 10Mb
+logging:
+  level:
+   il.co.boj.ldp: debug
+  file: /opt/ldp-ui.log
+  pattern:
+   console: '%d{yyyy-MM-dd HH:mm:ss} %-5p [%t] %C{1}:%M:%L - %m%n'
+   file:    '%d{yyyy-MM-dd HH:mm:ss} %-5p [%t] %C{1}:%M:%L - %m%n'
+spring:
+  data:
+    mongodb:
+      host: 127.0.0.1
+      #database: LDP-NG2
+      database: LDP-NG-TestWsdls
+  http:
+    multipart:
+      max-file-size: 10MB
+
+security:
+  require-ssl: false
+  jwt:
+    tokenExpirationTime: 240 # Number of minutes
+    refreshTokenExpTime: 25000 # Minutes
+    tokenIssuer: ldp-ui.com
+    tokenSigningKey: xm8EV6Hy5sdsdfdsJLKJIODHSJDHDkjhRMFK4EEACIDAwQus
+ldp:
+  production: false
+  serverName: Dev Server
+  passwordPattern: (?=.*[a-zA-Z0-9])(?=\S+$).{6,}
+  reloadUrlFromLdp: http://localhost:8080/reload
+ # passwordPattern: (?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\S+$).{6,}
